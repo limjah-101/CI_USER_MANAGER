@@ -26,12 +26,11 @@ class User_model extends CI_Model{
     {
         $this->db->from('users');
         $users = $this->db->get();
-
         return $users->result();
     }
 
     /**
-     * 
+     *  FETCH A SINGLE USER
      */
     public function getUser($id)
     {
@@ -42,7 +41,7 @@ class User_model extends CI_Model{
     }
 
     /**
-     * 
+     *  UPDATE A SINGLE USER
      */
     public function updateUser($id, $user)
     {
@@ -51,13 +50,12 @@ class User_model extends CI_Model{
     }
 
     /**
-     * 
+     *  DELETE A SINGLE USER
      */
     public function deleteUser($id)
     {
         $this->db->where("id", $id);
-        $this->db->delete($this->table);
-        
+        $this->db->delete($this->table);        
     }
 
 

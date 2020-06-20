@@ -10,7 +10,8 @@ class User extends CI_Controller{
     }
     
     /**
-     * 
+     * FETCH ALL USERS
+     * @return Obj
      */
     public function index()
     {
@@ -19,7 +20,8 @@ class User extends CI_Controller{
     }
 
     /**
-     * 
+     *  CREATE A NEW USER
+     * @return Json
      */
     public function create()
     {
@@ -32,7 +34,8 @@ class User extends CI_Controller{
     }
 
     /**
-     * 
+     *  EDIT A SINGLE USER
+     * @var int
      */
     public function edit($id)
     {
@@ -41,24 +44,23 @@ class User extends CI_Controller{
     }
 
     /**
-     * 
+     *  UPDATE A SINGLE USER
+     * @return obj
      */
     public function update()
     {
-        $user = [        
-            // 'id' => $this->input->post('user_id'),    
+        $user = [                     
             'name' => $this->input->post('user_name'),
             'email' => $this->input->post('user_email'),
         ];
 
         $insert = $this->User_model->updateUser(["id" => $this->input->post("user_id")], $user);        
-        echo json_encode(["status" => 200]);
-        // echo json_encode($data);
+        echo json_encode(["status" => 200]);        
     }
 
     /**
      * DELETE A SINGLE USER
-     * @var
+     * @var int
      */
 
      public function delete($id)

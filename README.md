@@ -4,3 +4,5 @@
 
 #Features:
     User CRUD ( with AJAX ).
+    Search Filter
+    
